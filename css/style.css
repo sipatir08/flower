@@ -16,17 +16,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  position: relative;
   padding: 20px;
+  text-align: center;
 }
 
 .greetings {
   font-size: 2rem;
   font-weight: 600;
+  text-align: center;
 }
 
-.greetings > span {
-  animation: glow 10s ease-in-out infinite;
+.greetings .line {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.greetings .line span {
+  animation: glow 5s ease-in-out infinite;
   display: inline-block;
 }
 
@@ -48,13 +57,9 @@ body {
 
 .button-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.button {
-  position: relative;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .button button {
@@ -77,19 +82,24 @@ body {
   font-weight: bold;
 }
 
-/* Note akan muncul di kanan bawah tombol */
 .note {
   position: absolute;
-  top: 110%; /* sedikit di bawah tombol */
-  right: -10px;
+  bottom: 30px;
+  right: 30px;
   font-size: 0.9rem;
   color: #ccc;
-  /* font-style: italic; */
-  text-align: left;
-  max-width: 250px;
+  font-style: italic;
+  text-align: right;
 }
 
-/* Responsif di HP */
+.note-under {
+  font-size: 0.75rem;
+  color: #ccc;
+  /* font-style: italic; */
+  margin-top: 20px; /* Atur jarak di sini */
+}
+
+
 @media screen and (max-width: 574px) {
   .greetings {
     font-size: 1.8rem;
@@ -109,8 +119,8 @@ body {
   }
 
   .note {
-    position: static;
-    margin-top: 10px;
-    text-align: center;
+    font-size: 0.75rem;
+    bottom: 20px;
+    right: 20px;
   }
 }
